@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//이 영역은 html이 아니라 프로그래밍 영역이므로, 오타는 심각한 에러가 난다
+//자바스크립트에서는 사용자 즉 개발자가 정의한 함수를가리켜 사용자정의함수라한다
+//그 앞에는 function 키워드를 붙여야 한다
+/*
+ 네트워크 통신 중 특히 http(hyper text transfer protocol)
+즉html 문서를 주고받을때는 이미 정해진 프로토콜 즉 규칙을 따라야 하는데, 
+http기반의 데이터 전송 방법에는 크게 5가지 정도가 된다..
+그중 당분간 2가지만 알고 가자 !!
+1) Get 방식 
+   마치 편지봉투에 데이터를 싣고 전송하는 방식, 
+   요청 header 를 타고 데이터를 전송하므로 , 보안이 되지 못하며, 데이터 전송량에
+   한계가 있다..텍스트 몇백자 정도???
+2) Post 방식 
+    요청 body를 통해 데이터를 전송하는 방식이며, 마치 현실의 편지봉투에 봉인된
+    편지지와 같은 방식..따라서 보안이 처리되며 전송할수 있는 양에 한계가 없다. 
+
+     ex) 게시판에서 동영상 업로드 싶다 - post 전송량 때문에..
+           로그인 폼에서 로그인요청을 하고 싶다 - post 보안때문에..
+          단순 링크를 통해 중요하지 않은 데이터를 문자몇자를 전송하고 싶다
+         Get   
+ */
+function send(){
+    form1.method="post";	 
+	form1.action="/member/regist";
+	//form1.action="/test.jsp";
+	form1.submit();//이 시점에 전송이 일어남!!
+}
+</script>
+</head>
+<body>
+	<form name="form1">
+		<input type="text" name="id" placeholder="아이디 입력"/>
+		<input type="password" name="pw" placeholder="비밀번호 입력"/>
+	</form>
+	<button OncLick="send()">전송</button>
+</body>
+</html>
+
+
+
+
+
